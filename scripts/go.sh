@@ -8,6 +8,8 @@ function install () {
   sudo rm -rf /usr/local/go
   sudo tar -C /usr/local -xzf go$VERSION.linux-amd64.tar.gz
   rm go$VERSION.linux-amd64.tar.gz
+  sudo rm $HOME/.config/go/env
+  ln -s $HOME/dotfiles/go/env $HOME/.config/go/env
 }
 
 function uninstall () {

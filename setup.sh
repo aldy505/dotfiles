@@ -1,21 +1,28 @@
 #!/bin/bash
 
 ME="/home/$(whoami)"
-CFG="$(ME)/.config"
-DOTFILES="$(ME)/dotfiles"
-BINDIR="$(ME)/dotfiles/bin"
+CFG="${ME}/.config"
+DOTFILES="${ME}/dotfiles"
+BINDIR="${ME}/dotfiles/bin"
 
 echo "I'm assuming you're doing a fresh install. Send a SIGTERM anytime you like."
 
-sudo apt get -y 
+sudo apt install -y curl wget openssl tar unzip git
+
+sudo chmod -R 755 ./scripts
 
 if test ! $(which fnm); then
-  echo "Installing fnm"
-  /bin/sh curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-  $(ME)/.fnm/fnm fnm install lts
+  ./scripts/node.sh install
 fi
 
 if test ! $(which go); then
-  echo "Installing go"
-  /bin/sh wget https://golang.org/dl/go1.16.6.linux-amd64.tar.gz
+  ./scripts/go.sh install
+fi
+
+if test ! $(which julia); then
+  ./scripts/julia.sh install
+fi
+
+if test ! $(which nvim); then
+  ./scripts/neovim.sh install
 fi

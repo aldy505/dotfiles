@@ -18,6 +18,7 @@ function install_bat () {
 
 if [ "$1" == "install" ]; then
   install_exa
+  install_bat
 elif [ "$1" == "uninstall" ] || [ "$1" == "remove" ]; then
   uninstall
 else
