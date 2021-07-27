@@ -7,7 +7,7 @@ BINDIR="$(ME)/dotfiles/bin"
 
 echo "I'm assuming you're doing a fresh install. Send a SIGTERM anytime you like."
 
-
+sudo apt get -y 
 
 if test ! $(which fnm); then
   echo "Installing fnm"

@@ -1,8 +1,24 @@
 #!/bin/bash
 
-GOVERSION="1.16.6"
+VERSION="1.16.6"
 
-wget https://golang.org/dl/go$(GOVERSIONI).linux-amd64.tar.gz
-rm -rf /usr/local/go
-tar -C /usr/local -xzf go$(GOVERSION).linux-amd64.tar.gz
-rm go$(GOVERSION).linux-amd64.tar.gz
+function install () {
+  echo "installing go"
+  wget https://golang.org/dl/go$VERSION.linux-amd64.tar.gz
+  sudo rm -rf /usr/local/go
+  sudo tar -C /usr/local -xzf go$VERSION.linux-amd64.tar.gz
+  rm go$VERSION.linux-amd64.tar.gz
+}
+
+function uninstall () {
+  echo "uninstalling go"
+  sudo rm -rf /usr/local/go
+}
+
+if [ "$1" == "install" ]; then
+  install
+elif [ "$1" == "uninstall" ] || [ "$1" == "remove" ]; then
+  uninstall
+else
+  echo "please specify args with install or uninstall"
+fi

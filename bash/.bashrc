@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # fnm
-export PATH=/home/$(ME)/.fnm:/opt/python/3.9.5/bin:/home/$(ME)/.fly/bin:$PATH
+export PATH=$ME/.fnm:/opt/python/3.9.5/bin:$ME/.fly/bin:$PATH
 eval "`fnm env`"
 
 export LIBGL_ALWAYS_INDIRECT=1
