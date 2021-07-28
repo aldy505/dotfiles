@@ -14,6 +14,8 @@ function install () {
   sudo rm nvim.appimage.sha256sum
   sudo rm -rf nvim.appimage
   sudo rm -rf squashfs-root
+  mkdir $HOME/.config/nvim
+  ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
 }
 
 function uninstall () {
