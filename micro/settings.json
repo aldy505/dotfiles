@@ -1,0 +1,7 @@
+{
+    "*.go": {
+        "tabstospaces": false
+    },
+    "colorscheme": "night-owl",
+    "tabsize": 2
+}

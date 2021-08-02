@@ -8,6 +8,7 @@ BINDIR="${ME}/dotfiles/bin"
 echo "I'm assuming you're doing a fresh install. Send a SIGTERM anytime you like."
 
 sudo apt install -y curl wget openssl tar unzip git
+sudo apt-get install editorconfig
 
 sudo chmod -R 755 ./scripts
 
