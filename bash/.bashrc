@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # fnm
-export PATH=$ME/.fnm:/opt/python/3.9.5/bin:$ME/.fly/bin:$PATH
+export PATH=$ME/.fnm:/opt/python/3.9.5/bin:$ME/.fly/bin:$ME/go/bin:$ME/dotfiles/bin:$PATH
 eval "`fnm env`"
 
 export LIBGL_ALWAYS_INDIRECT=1
@@ -126,3 +126,6 @@ export LIBGL_ALWAYS_INDIRECT=1
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 sudo /etc/init.d/dbus start &> /dev/null
 . "$HOME/.cargo/env"
+
+export EDITOR="micro"
+alias idea="eureka"

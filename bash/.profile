@@ -27,7 +27,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin:/opt/julia/bin:/usr/local/bin/heroku
+export PATH=/usr/local/go/bin:$GOPATH/bin:/opt/julia/bin:/usr/local/bin/heroku:$PATH
 # :/usr/local/pypy3.7-v7.3.5-linux64/bin
 export GPG_TTY=$(tty)
 . "$HOME/.cargo/env"

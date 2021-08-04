@@ -1,3 +1,0 @@
-#!bin/bash
-
-npm install -g yarn tldr pnpm npm-check-updates np commitizen add-gitignore
