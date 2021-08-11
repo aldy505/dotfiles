@@ -128,4 +128,3 @@ sudo /etc/init.d/dbus start &> /dev/null
 . "$HOME/.cargo/env"
 
 export EDITOR="micro"
-alias idea="eureka"

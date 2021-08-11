@@ -1,0 +1,25 @@
+#!/usr/bin/env julia
+
+homePath = homedir()
+
+cd("$homePath/repository/ideas")
+
+if length(ARGS) == 0
+	println("gimme some idea dude")
+	exit(0)
+end
+
+category = ARGS[1] * ".md"
+idea = copy(ARGS)
+popat!(idea, 1)
+idea = join(idea, " ")
+
+open(category, "a") do io
+	write(io, "- $idea\n")
+end
+
+run(`git add .`)
+run(`git commit -m "new idea on $category"`)
+
+println("your idea on $category has been added and commited to the repo")
+exit(0)
