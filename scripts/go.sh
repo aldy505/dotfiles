@@ -1,15 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-VERSION="1.16.6"
+VERSION="1.16.7"
 
 function install () {
   echo "installing go"
+  sudo ~
   wget https://golang.org/dl/go$VERSION.linux-amd64.tar.gz
   sudo rm -rf /usr/local/go
   sudo tar -C /usr/local -xzf go$VERSION.linux-amd64.tar.gz
-  rm go$VERSION.linux-amd64.tar.gz
-  sudo rm $HOME/.config/go/env
-  ln -s $HOME/dotfiles/go/env $HOME/.config/go/env
+  sudo rm go$VERSION.linux-amd64.tar.gz
+  sudo rm $HOME/.config/go
+  sudo mkdir $HOME/.config/go
+  sudo ln -s ${DOTFILES_PATH}/go/env $HOME/.config/go/env
 }
 
 function uninstall () {

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 fnm uninstall 14
 fnm uninstall 16

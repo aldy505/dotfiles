@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 MINOR="1.6"
 VERSION="1.6.2"
@@ -8,9 +8,9 @@ function install () {
   cd ~
   wget https://julialang-s3.julialang.org/bin/linux/x64/$MINOR/julia-$VERSION-linux-x86_64.tar.gz
   tar zxvf julia-$VERSION-linux-x86_64.tar.gz
-  mv julia-$VERSION julia
+  sudo mv julia-$VERSION julia
   sudo mv julia /opt/julia
-  rm julia-$VERSION-linux-x86_64.tar.gz
+  sudo rm julia-$VERSION-linux-x86_64.tar.gz
 }
 
 function uninstall () {

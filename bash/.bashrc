@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # fnm
-export PATH=$ME/.fnm:/opt/python/3.9.5/bin:$ME/.fly/bin:$ME/go/bin:$ME/dotfiles/bin:$PATH
+export PATH=$ME/.fnm:/opt/julia/bin:/opt/python/3.9.6/bin:/opt/java/bin:$ME/.fly/bin:$ME/go/bin:$DOTFILES_PATH/bin:$PATH
 eval "`fnm env`"
 
 export LIBGL_ALWAYS_INDIRECT=1
@@ -128,3 +128,4 @@ sudo /etc/init.d/dbus start &> /dev/null
 . "$HOME/.cargo/env"
 
 export EDITOR="micro"
+export DOTFILES_PATH=/home/reinaldy/.dotfiles

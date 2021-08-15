@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 
+VERSION="5.4.3"
+
 function install () {
   cd ~
-  git clone https://github.com/justinmeza/lci.git
-  cd lci
-  cmake .
-  sudo make
+  wget https://www.lua.org/ftp/lua-$VERSION.tar.gz
+  sudo tar zxf lua-$VERSION.tar.gz
+  cd lua-$VERSION
+  make
   sudo make install
   cd ~
-  sudo rm -rf lci
+  sudo rm -rf lua-$VERSION
+  sudo rm lua-$VERSION.tar.gz
 }
 
 function uninstall () {
-  rm -rf /usr/local/bin/lci
+  sudo rm -rf /usr/local/bin/lua
+  sudo rm -rf /usr/local/lib/lua
 }
 
 if [ "$1" == "install" ]; then

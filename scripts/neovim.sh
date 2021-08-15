@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 VERSION="v0.5.0"
 
 function install () {
+  cd ~
   wget https://github.com/neovim/neovim/releases/download/$VERSION/nvim.appimage
   wget https://github.com/neovim/neovim/releases/download/$VERSION/nvim.appimage.sha256sum
   sha256sum nvim.appimage
@@ -15,7 +16,7 @@ function install () {
   sudo rm -rf nvim.appimage
   sudo rm -rf squashfs-root
   mkdir $HOME/.config/nvim
-  ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+  ln -s ${DOTFILES_PATH}/nvim/init.vim $HOME/.config/nvim/init.vim
 }
 
 function uninstall () {

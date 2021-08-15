@@ -1,10 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function install () {
   echo "installing node js"
   curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-  $ME/.fnm/fnm fnm install lts
-  npm i -g yarn pnpm npm-check-updates np add-gitignore commitizen
+  node-update
 }
 
 function uninstall () {
