@@ -26,22 +26,26 @@ function set_symlink () {
   sudo ln -s ${DOTFILES_PATH}/git/.czrc $HOME/.czrc
 }
 
+sudo chmod -R 755 ./scripts
+sudo chmod -R 755 ./bin
+
 if [[ $(cat /etc/issue) = *"Ubuntu"* ]]; then
   sudo apt update
   sudo apt upgrade
+  sudo add-apt-repository ppa:git-core/ppa
+  sudo apt update
   sudo apt install -y curl wget openssl tar unzip git rlwrap editorconfig gpg build-essential libffi-dev libgdbm-dev libsqlite3-dev libssl-dev zlib1g-dev
   set_symlink
 elif [[ $(cat /etc/issue) = *"Debian"* ]]; then
   sudo apt-get update
   sudo apt-get upgrade
   sudo apt-get install -y curl wget openssl tar unzip git rlwrap editorconfig gpg build-essential libffi-dev libgdbm-dev libsqlite3-dev libssl-dev zlib1g-dev
+  sudo apt-get install -y libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext
+  ./scripts/git.sh install
   set_symlink
 else
   echo "you will need to install curl, wget, openssl, gpg, and other stuff yourself"
 fi
-
-sudo chmod -R 755 ./scripts
-sudo chmod -R 755 ./bin
 
 ./scripts/python.sh install
 
