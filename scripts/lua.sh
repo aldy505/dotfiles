@@ -7,11 +7,13 @@ function install () {
   wget https://www.lua.org/ftp/lua-$VERSION.tar.gz
   sudo tar zxf lua-$VERSION.tar.gz
   cd lua-$VERSION
-  make
+  sudo make
   sudo make install
   cd ~
   sudo rm -rf lua-$VERSION
   sudo rm lua-$VERSION.tar.gz
+  printf "\n"
+  lua -v
 }
 
 function uninstall () {

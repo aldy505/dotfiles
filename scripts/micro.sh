@@ -2,7 +2,7 @@
 
 function install () {
   curl https://getmic.ro | bash
-  sudo mv micro /usr/bin
+  sudo mv micro /opt/bin
   sudo rm $HOME/.config/micro/settings.json
   sudo rm $HOME/.config/micro/bindings.json
   sudo ln -s ${DOTFILES_PATH}/micro/settings.json $HOME/.config/micro/settings.json
@@ -13,11 +13,12 @@ function install () {
   micro -plugin install editorconfig
   micro -plugin install filemanager
   micro -plugin install go
-  micro -plugin install wakatime
+  printf "\n\n"
+  micro -version
 }
 
 function uninstall () {
-  sudo rm /usr/bin/micro
+  sudo rm /opt/bin/micro
 }
 
 if [ "$1" == "install" ]; then

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function install () {
-  sudo ~
+  cd ~
   curl -O https://download.clojure.org/install/linux-install-1.10.3.943.sh
   chmod +x linux-install-1.10.3.943.sh
   sudo ./linux-install-1.10.3.943.sh
@@ -13,6 +13,9 @@ function install () {
   sudo lein
   
   sudo rm linux-install-1.10.3.943.sh
+
+  printf "\n\n"
+  clj --version
 }
 
 if [ "$1" == "install" ]; then

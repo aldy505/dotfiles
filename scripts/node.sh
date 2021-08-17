@@ -4,6 +4,8 @@ function install () {
   echo "installing node js"
   curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
   node-update
+  printf "\n\n"
+  node --version
 }
 
 function uninstall () {

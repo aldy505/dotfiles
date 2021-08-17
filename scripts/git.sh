@@ -12,6 +12,8 @@ function install () {
   cd ~
   sudo rm -rf git-${VERSION}
   sudo rm v${VERSION}.zip
+  printf "\n\n"
+  git --version
 }
 
 function setup () {

@@ -11,6 +11,8 @@ function install () {
   sudo mv julia-$VERSION julia
   sudo mv julia /opt/julia
   sudo rm julia-$VERSION-linux-x86_64.tar.gz
+  printf "\n\n"
+  julia --version
 }
 
 function uninstall () {

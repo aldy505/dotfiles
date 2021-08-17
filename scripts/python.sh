@@ -22,8 +22,9 @@ function install () {
   sudo rm Python-$VERSION.tgz
   sudo rm -rf Python-$VERSION
   sudo rm get-pip.py
-
-  /opt/python/${VERSION}/bin/python3 --version
+  
+  printf "\n\n"
+  python3 --version
 }
 
 if [ "$1" == "install" ]; then

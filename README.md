@@ -1,6 +1,13 @@
 # ~/dotfiles
 
-This is here in case anything goes wrong. I'm using WSL2 (Windows on Linux), so no window manager or something like that.
+This is here in case anything goes wrong. I'm using WSL2 (Windows Subsystem Linux), so no window manager or something like that.
+
+I'm not licensing it. If you want to steal a script or two, that's totally fine, even without asking my permission.
+
+Use [issues](https://github.com/aldy505/dotfiles/issues) for any questions.
+
+Debian (I used to use Ubuntu)
+![](./debian.png)
 
 ### Directory structure
 
@@ -19,7 +26,3 @@ This is here in case anything goes wrong. I'm using WSL2 (Windows on Linux), so 
 ├── README.md       - You are here
 └── setup.sh        - Entrypoint if I'm doing a fresh install
 ```
-
-I'm not licensing it. If you want to steal a script or two, that's totally fine, even without asking my permission.
-
-Use [issues](https://github.com/aldy505/dotfiles/issues) for any questions.

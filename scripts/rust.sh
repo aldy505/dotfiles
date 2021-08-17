@@ -2,6 +2,9 @@
 
 function install () {
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	printf "\n\n"
+	rustc --version
+	cargo --version
 }
 
 function uninstall () {

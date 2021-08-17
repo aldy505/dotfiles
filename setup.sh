@@ -28,6 +28,7 @@ function set_symlink () {
 
 sudo chmod -R 755 ./scripts
 sudo chmod -R 755 ./bin
+sudo mkdir /opt/bin
 
 if [[ $(cat /etc/issue) = *"Ubuntu"* ]]; then
   sudo apt update
@@ -56,6 +57,8 @@ fi
 ./scripts/julia.sh install
 
 ./scripts/rust.sh install
+
+./scripts/java.sh install_alt
 
 ./scripts/micro.sh install
 

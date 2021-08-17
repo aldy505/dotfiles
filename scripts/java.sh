@@ -13,8 +13,19 @@ function install () {
   sudo rm openjdk-${VERSION}_linux-x64_bin.tar.gz.sha256
 }
 
+function install_alt () {
+  cd ~
+  sudo apt-get install openjdk-11-jre openjdk-11-jdk
+  printf "\n\n"
+  java --version
+  printf "\n"
+  javac --version
+}
+
 if [ "$1" == "install" ]; then
   install
+elif [ "$1" == "install_alt" ]; then
+  install_alt
 # elif [ "$1" == "uninstall" ] || [ "$1" == "remove" ]; then
 #   uninstall
 else
