@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 function install () {
+  cd ~
+  sudo apt-get install xclip
   curl https://getmic.ro | bash
   sudo mv micro /opt/bin
   sudo rm $HOME/.config/micro/settings.json

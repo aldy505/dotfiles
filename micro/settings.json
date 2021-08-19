@@ -3,5 +3,6 @@
         "tabstospaces": false
     },
     "colorscheme": "night-owl",
-    "tabsize": 2
+    "tabsize": 2,
+    "tabtospaces": true
 }

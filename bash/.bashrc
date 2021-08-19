@@ -127,6 +127,15 @@ export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}
 sudo /etc/init.d/dbus start &> /dev/null
 . "$HOME/.cargo/env"
 
+# enable GPG signing
+export GPG_TTY=$(tty)
+
+if [ ! -f ~/.gnupg/S.gpg-agent ]; then
+    eval $( gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf )
+fi
+
+export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
+
 export EDITOR="micro"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export DOTFILES_PATH=/home/reinaldy/.dotfiles
