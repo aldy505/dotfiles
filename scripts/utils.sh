@@ -69,6 +69,15 @@ function install_fzf () {
   sudo rm fzf-${FZF_VERSION}-linux_amd64.tar.gz
 }
 
+function install_ripgrep () {
+  RIPGREP_VERSION="12.1.1"
+  cd ~
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep_${RIPGREP_VERSION}_amd64.deb
+  sudo dpkg -i ripgrep_${RIPGREP_VERSION}_amd64.deb
+  sudo rm ripgrep_${RIPGREP_VERSION}_amd64.deb
+  rg --version
+}
+
 if [ "$1" == "install" ]; then
   if [ "$2" == "bat" ]; then
     install_bat
@@ -85,6 +94,7 @@ if [ "$1" == "install" ]; then
     install_neofetch
     install_fd
     install_fzf
+    install_ripgrep
   fi
 elif [ "$1" == "uninstall" ] || [ "$1" == "remove" ]; then
   uninstall
