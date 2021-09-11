@@ -1,0 +1,32 @@
+#!/usr/bin/env julia
+
+import Pkg
+Pkg.add("HTTP")
+
+using HTTP
+
+if length(ARGS) == 0
+  println("please specify the gitignore template")
+  exit(0)
+end
+
+if isfile(".gitignore")
+  println("gitignore file already exists, delete that if you wanna make a new one")
+  exit(0)
+end
+
+template = ARGS[1]
+
+r = HTTP.request("GET", "https://www.toptal.com/developers/gitignore/api/$template")
+
+if r.status != 200
+  println("the template specified does not exist")
+  exit(1)
+end
+
+open(".gitignore", "a") do io
+  write(io, String(r.body))
+end
+
+println("gitignore successfully written")
+exit(0)

@@ -137,5 +137,6 @@ fi
 export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
 
 export EDITOR="micro"
+export COLORTERM="truecolor"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export DOTFILES_PATH=/home/reinaldy/.dotfiles
