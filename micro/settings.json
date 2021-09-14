@@ -2,6 +2,8 @@
     "*.go": {
         "tabstospaces": false
     },
+    "autosave": 60,
+    "clipboard": "terminal",
     "colorscheme": "night-owl",
     "tabsize": 2,
     "tabtospaces": true
