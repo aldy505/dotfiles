@@ -1,0 +1,5 @@
+scan_timeout = 5000
+command_timeout = 5000
+
+[directory]
+truncation_length = 5

@@ -91,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias fucking='sudo'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -140,3 +141,4 @@ export EDITOR="micro"
 export COLORTERM="truecolor"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export DOTFILES_PATH=/home/reinaldy/.dotfiles
+eval "$(starship init bash)"
