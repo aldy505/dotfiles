@@ -1,1 +1,61 @@
-/mnt/c/users/asus rog/appdata/roaming/code/user/settings.json
+{
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.excludeLanguages": [
+  
+  ],
+  "emmet.includeLanguages": {"markdown": "html"},
+  "git.enableSmartCommit": true,
+  "files.autoSave": "onFocusChange",
+  "[vue]": {
+      "editor.defaultFormatter": "octref.vetur"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.commandsToSkipShell": [
+      "language-julia.interrupt"
+  ],
+  "julia.enableTelemetry": true,
+  "files.eol": "\n",
+  "http.proxySupport": "off",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "go.toolsManagement.autoUpdate": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.tabSize": 2,
+  "workbench.editorAssociations": {
+      "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.startupEditor": "none",
+  "rust-client.channel": "stable",
+  "rust-client.rustupPath": "$HOME/.cargo/bin/rustup",
+  "editor.fontLigatures": false,
+  "editor.formatOnSaveMode": "modifications",
+  "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+  },
+  "files.watcherExclude": {
+      "**/.bloop": true,
+      "**/.metals": true,
+      "**/.ammonite": true
+  },
+  "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "files.encoding": "utf8",
+  "redhat.telemetry.enabled": false,
+  "julia.symbolCacheDownload": true,
+  "workbench.editor.untitled.experimentalLanguageDetection": true,
+  "editor.find.cursorMoveOnType": false,
+  "editor.fontFamily": "SFMono Nerd Font",
+  "editor.largeFileOptimizations": true,
+  "editor.fontWeight": "300",
+  "svelte.enable-ts-plugin": true,
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
+  "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
+  "window.autoDetectColorScheme": true,
+}
