@@ -24,5 +24,6 @@ Debian (I used to use Ubuntu)
 │ 
 ├── me.jpg          - My Github profile picture
 ├── README.md       - You are here
-└── setup.sh        - Entrypoint if I'm doing a fresh install
+├── setup_arch.sh   - Entrypoint if I'm doing a fresh install for arch
+└── setup_deb.sh    - Entrypoint if I'm doing a fresh install for debian
 ```

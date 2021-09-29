@@ -63,3 +63,5 @@ fi
 ./scripts/micro.sh install
 
 ./scripts/utils.sh install
+
+C:\Users\Asus ROG\AppData\Roaming\Code\User
