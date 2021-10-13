@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 export ME="/home/$(whoami)"
+export DOTFILES_PATH=/home/reinaldy/.dotfiles
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -118,7 +120,7 @@ if ! shopt -oq posix; then
 fi
 
 # fnm
-export PATH=$ME/.fnm:/opt/julia/bin:/opt/python/3.9.6/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$DOTFILES_PATH/bin:$PATH
+export PATH=$ME/.fnm:/opt/julia/bin:/opt/python/3.10.0/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$DOTFILES_PATH/bin:$PATH
 eval "`fnm env`"
 
 export LIBGL_ALWAYS_INDIRECT=1
@@ -140,5 +142,4 @@ export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
 export EDITOR="micro"
 export COLORTERM="truecolor"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export DOTFILES_PATH=/home/reinaldy/.dotfiles
 eval "$(starship init bash)"
