@@ -1,16 +1,19 @@
-[user]
-	name = Reinaldy Rafli
-	email = aldy505@tutanota.com
-	signingkey = CFDB9400255D8CB6
-[core]
-	editor = code
-[color]
-	status = auto
-	branch = auto
-	interactive = auto
-[gpg]
-	program = gpg
-[init]
-	defaultBranch = master
-[commit]
-	gpgsign = false
+[includeIf "gitdir:~/repository/kawanlama/"]
+  path = ~/repository/kawanlama/.gitconfig
+[includeIf "gitdir:~/repository/personal/"]
+  path = ~/repository/.gitconfig
+[includeIf "gitdir:~/repository/oss/"]
+  path = ~/repository/.gitconfig
+[includeIf "gitdir:~/repository/teknologi-umum/"]
+  path = ~/repository/.gitconfig
+[includeIf "gitdir:~/repository/databases/"]
+  path = ~/repository/.gitconfig
+[includeIf "gitdir:~/repository/arcet/"]
+  path = ~/repository/.gitconfig
+[includeIf "gitdir:~/repository/tridots-lms/"]
+  path = ~/repository/.gitconfig
+[includeIf "gitdir:~/repository/reinaldyrfl/"]
+  path = ~/repository/.gitconfig
+[includeIf "gitdir:~/.dotfiles/"]
+  path = ~/repository/.gitconfig
+

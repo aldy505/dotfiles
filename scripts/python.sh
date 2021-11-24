@@ -4,7 +4,7 @@ VERSION="3.9.6"
 
 function install () {
   cd ~
-  curl -O https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tgz
+  curl -O https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
   sudo tar -xvzf Python-${VERSION}.tgz
   cd Python-${VERSION}
   ./configure \
@@ -19,10 +19,10 @@ function install () {
   curl -O https://bootstrap.pypa.io/get-pip.py
   sudo /opt/python/${VERSION}/bin/python3 get-pip.py
 
-  sudo rm Python-$VERSION.tgz
-  sudo rm -rf Python-$VERSION
+  sudo rm Python-${VERSION}.tgz
+  sudo rm -rf Python-${VERSION}
   sudo rm get-pip.py
-  
+
   printf "\n\n"
   python3 --version
 }

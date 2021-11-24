@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 
-fnm uninstall 14
 fnm uninstall 16
-
-fnm install 14
-fnm use 14
-npm install -g yarn tldr pnpm npm-check-updates np node-gyp commitizen
 
 fnm install 16
 fnm use 16
-npm install -g yarn tldr pnpm npm-check-updates np node-gyp commitizen
+npm install -g pnpm npm-check-updates node-gyp commitizen

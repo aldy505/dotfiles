@@ -4,8 +4,8 @@ VERSION="v0.5.0"
 
 function install () {
   cd ~
-  wget https://github.com/neovim/neovim/releases/download/$VERSION/nvim.appimage
-  wget https://github.com/neovim/neovim/releases/download/$VERSION/nvim.appimage.sha256sum
+  wget https://github.com/neovim/neovim/releases/download/${VERSION}/nvim.appimage
+  wget https://github.com/neovim/neovim/releases/download/${VERSION}/nvim.appimage.sha256sum
   sha256sum nvim.appimage
   sudo chmod u+x nvim.appimage
   ./nvim.appimage --appimage-extract

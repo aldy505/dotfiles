@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="2.32.0"
+VERSION="2.34.0"
 
 function install () {
   cd ~
@@ -14,6 +14,10 @@ function install () {
   sudo rm v${VERSION}.zip
   printf "\n\n"
   git --version
+}
+
+function uninstall () {
+  sudo rm /usr/local/bin/git
 }
 
 function setup () {

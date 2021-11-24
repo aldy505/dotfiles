@@ -118,7 +118,9 @@ if ! shopt -oq posix; then
 fi
 
 # fnm
-export PATH=$ME/.fnm:/opt/julia/bin:/opt/python/3.9.6/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$DOTFILES_PATH/bin:$PATH
+PATH=$DOTFILES_PATH/bin:$ME/.local/kitty.app/bin/kitty:$PATH
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$PATH
+export PATH=$ME/.fnm:/opt/julia/bin:/opt/janet/bin:/opt/python/3.9.6/bin:/opt:/opt/zig:$PATH
 eval "`fnm env`"
 
 export LIBGL_ALWAYS_INDIRECT=1
@@ -142,3 +144,10 @@ export COLORTERM="truecolor"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export DOTFILES_PATH=/home/reinaldy/.dotfiles
 eval "$(starship init bash)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+BUN_INSTALL="/home/reinaldy/.bun"
+PATH="$BUN_INSTALL/bin:$PATH"

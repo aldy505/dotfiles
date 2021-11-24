@@ -4,14 +4,14 @@ VERSION="5.4.3"
 
 function install () {
   cd ~
-  wget https://www.lua.org/ftp/lua-$VERSION.tar.gz
-  sudo tar zxf lua-$VERSION.tar.gz
-  cd lua-$VERSION
+  wget https://www.lua.org/ftp/lua-${VERSION}.tar.gz
+  sudo tar zxf lua-${VERSION}.tar.gz
+  cd lua-${VERSION}
   sudo make
   sudo make install
   cd ~
-  sudo rm -rf lua-$VERSION
-  sudo rm lua-$VERSION.tar.gz
+  sudo rm -rf lua-${VERSION}
+  sudo rm lua-${VERSION}.tar.gz
   printf "\n"
   lua -v
 }
