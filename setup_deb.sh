@@ -55,7 +55,7 @@ fi
 ./scripts/go.sh install
 
 ./scripts/julia.sh install
-
+ 
 ./scripts/rust.sh install
 
 ./scripts/java.sh install_alt

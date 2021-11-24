@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 export ME="/home/$(whoami)"
+export DOTFILES_PATH=/home/reinaldy/.dotfiles
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -142,7 +144,6 @@ export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
 export EDITOR="micro"
 export COLORTERM="truecolor"
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export DOTFILES_PATH=/home/reinaldy/.dotfiles
 eval "$(starship init bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="3.9.6"
+VERSION="3.10.0"
 
 function install () {
   cd ~
