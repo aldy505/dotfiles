@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
-VERSION="1.17.3"
+VERSION="1.17.5"
 
 function install () {
   echo "installing go"
   cd ~
-  wget https://golang.org/dl/go${VERSION}.linux-amd64.tar.gz
+  wget https://go.dev/dl/go${VERSION}.linux-amd64.tar.gz
+  echo "bd78114b0d441b029c8fe0341f4910370925a4d270a6a590668840675b0c653e" > go${VERSION}.linux-amd64.tar.gz.sha256
+  sha256sum -c go${VERSION}.linux-amd64.tar.gz.sha256
   sudo rm -rf /usr/local/go
   sudo tar -C /usr/local -xzf go${VERSION}.linux-amd64.tar.gz
   sudo rm go${VERSION}.linux-amd64.tar.gz
+  sudo rm go${VERSION}.linux-amd64.tar.gz.sha256
   sudo rm -rf ${HOME}/.config/go
   sudo mkdir ${HOME}/.config/go
   sudo ln -s ${DOTFILES_PATH}/go/env ${HOME}/.config/go/env

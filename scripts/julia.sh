@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-MINOR="1.6"
-VERSION="1.6.3"
+MINOR="1.7"
+VERSION="1.7.0"
 
 function install () {
   echo "installing julia"
   cd ~
   wget https://julialang-s3.julialang.org/bin/linux/x64/${MINOR}/julia-${VERSION}-linux-x86_64.tar.gz
+  wget https://julialang-s3.julialang.org/bin/checksums/julia-${VERSION}.sha256
+  sha256sum -c julia-${VERSION}
   tar zxvf julia-${VERSION}-linux-x86_64.tar.gz
   sudo mv julia-${VERSION} julia
   sudo mv julia /opt/julia

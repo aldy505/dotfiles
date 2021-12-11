@@ -1,21 +1,37 @@
 #!/usr/bin/env bash
 
-VERSION="1.18.1"
+VERSION="1.19.2"
 
 function install () {
   cd ~
-  wget https://github.com/janet-lang/janet/releases/download/v${VERSION}/janet-v${VERSION}-linux-x64.tar.gz
-  tar zxvf janet-v${VERSION}-linux-x64.tar.gz
-  sudo mv janet-v${VERSION}-linux janet
-  sudo mv janet /opt/janet
-  sudo rm janet-v${VERSION}-linux-x64.tar.gz
+  wget https://github.com/janet-lang/janet/archive/refs/tags/v${VERSION}.tar.gz
+  tar zxvf v${VERSION}.tar.gz
+  cd janet-${VERSION}
+  sudo make
+  sudo make test
+  sudo mv -v build bin
+  cd ~
+  sudo mv -v janet-${VERSION} /opt/janet
+  sudo rm v${VERSION}.tar.gz
+  sudo rm -rf janet-${VERSION}
+  sudo ln -s /opt/janet/bin/janet /usr/local/bin/janet
 
   git clone --depth=1 https://github.com/janet-lang/jpm.git
   cd jpm
-  sudo janet bootstrap.janet
+  sudo /opt/janet/bin/janet bootstrap.janet
+
+  cd ~
+  sudo rm -rf jpm
 
   printf "\n\n"
-  janet --version
+  janet -v
+}
+
+function uninstall () {
+  echo "uninstalling janet"
+  sudo rm -rf /opt/janet
+  sudo rm /usr/local/bin/jpm
+  sudo rm /usr/local/bin/janet
 }
 
 if [ "$1" == "install" ]; then

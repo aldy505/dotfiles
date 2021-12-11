@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-VERSION="3.10.0"
+VERSION="3.10.1"
 
 function install () {
   cd ~
   curl -O https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz
+  echo "91822157a97da16203877400c810d93e" > Python-${VERSION}.tgz.md5
+  md5sum -c Python-${VERSION}.tgz.md5
   sudo tar -xvzf Python-${VERSION}.tgz
   cd Python-${VERSION}
   ./configure \
@@ -20,6 +22,7 @@ function install () {
   sudo /opt/python/${VERSION}/bin/python3 get-pip.py
 
   sudo rm Python-${VERSION}.tgz
+  sudo rm Python-${VERSION}.tgz.md5
   sudo rm -rf Python-${VERSION}
   sudo rm get-pip.py
 
