@@ -17,3 +17,5 @@
 [includeIf "gitdir:~/.dotfiles/"]
   path = ~/repository/.gitconfig
 
+[user]
+	signingkey = 748A8EC5DB8653E8

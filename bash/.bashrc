@@ -123,8 +123,8 @@ fi
 
 # fnm
 PATH=$DOTFILES_PATH/bin:$ME/.local/kitty.app/bin/kitty:$PATH
-PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$PATH
-export PATH=$ME/.fnm:/opt/julia/bin:/opt/janet/bin:/opt/python/3.9.6/bin:/opt:/opt/zig:$PATH
+PATH=$ME/.poetry/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$PATH
+export PATH=$ME/.fnm:/opt/julia/bin:/opt/swift/usr/bin:/opt/janet/bin:/opt/python/3.10.1/bin:/opt:/opt/zig:$PATH
 eval "`fnm env`"
 
 export LIBGL_ALWAYS_INDIRECT=1
@@ -151,6 +151,4 @@ eval "$(starship init bash)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-BUN_INSTALL="/home/reinaldy/.bun"
-PATH="$BUN_INSTALL/bin:$PATH"
+export DOTFILES_PATH=/home/reinaldy/.dotfiles

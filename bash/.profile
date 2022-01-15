@@ -31,3 +31,5 @@ export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 # :/usr/local/pypy3.7-v7.3.5-linux64/bin
 
 . "$HOME/.cargo/env"
+
+export PATH="$HOME/.poetry/bin:$PATH"

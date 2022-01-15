@@ -24,6 +24,7 @@ function set_symlink () {
   sudo ln -s ${DOTFILES_PATH}/git/.gitconfig $HOME/.gitconfig
   sudo rm $HOME/.czcrc
   sudo ln -s ${DOTFILES_PATH}/git/.czrc $HOME/.czrc
+  sudo ln -s ${DOTFILES_PATH}/gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 }
 
 sudo chmod -R 755 ./scripts
@@ -32,14 +33,14 @@ sudo mkdir /opt/bin
 
 if [[ $(cat /etc/issue) = *"Ubuntu"* ]]; then
   sudo apt update
-  sudo apt upgrade
+  sudo apt upgrade -y
   sudo add-apt-repository ppa:git-core/ppa
   sudo apt update
   sudo apt install -y curl wget openssl tar unzip git rlwrap ssh editorconfig gpg build-essential libffi-dev libgdbm-dev libsqlite3-dev libssl-dev zlib1g-dev
   set_symlink
 elif [[ $(cat /etc/issue) = *"Debian"* ]]; then
   sudo apt-get update
-  sudo apt-get upgrade
+  sudo apt-get upgrade -y
   sudo apt-get install -y curl wget openssl tar unzip rlwrap ssh editorconfig gpg build-essential libffi-dev libgdbm-dev libsqlite3-dev libssl-dev zlib1g-dev
   sudo apt-get install -y libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext
   ./scripts/git.sh install
@@ -55,11 +56,15 @@ fi
 ./scripts/go.sh install
 
 ./scripts/julia.sh install
- 
+
 ./scripts/rust.sh install
 
-./scripts/java.sh install_alt
+#./scripts/java.sh install_alt
 
 ./scripts/micro.sh install
 
 ./scripts/utils.sh install
+
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+printf "\n\nCompleted\!\nNow do:\n        source ~/.bashrc\n\n"
