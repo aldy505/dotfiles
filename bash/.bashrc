@@ -92,6 +92,7 @@ fi
 # some more ls aliases
 alias ls='exa'
 alias find='fd'
+alias cat='bat'
 alias fucking='sudo'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -119,7 +120,7 @@ if ! shopt -oq posix; then
 fi
 
 # fnm
-PATH=$DOTFILES_PATH/bin:$ME/.local/kitty.app/bin/kitty:$PATH
+PATH=$DOTFILES_PATH/bin:$ME/.local/bin:$ME/.local/kitty.app/bin/kitty:$PATH
 PATH=$ME/.poetry/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$PATH
 export PATH=$ME/.fnm:/opt/julia/bin:/opt/swift/usr/bin:/opt/janet/bin:/opt/python/3.10.1/bin:/opt:/opt/zig:$PATH
 eval "`fnm env`"
@@ -148,4 +149,4 @@ eval "$(starship init bash)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export DOTFILES_PATH=/home/reinaldy/.dotfiles
+

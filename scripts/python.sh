@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="3.10.0"
+VERSION="3.10.1"
 
 function install () {
   cd ~
@@ -32,5 +32,5 @@ if [ "$1" == "install" ]; then
 # elif [ "$1" == "uninstall" ]; then
 # 	uninstall
 else
-	echo "Only install and uninstall"
+	echo "Only install"
 fi
