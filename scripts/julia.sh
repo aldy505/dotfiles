@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-MINOR="1.6"
-VERSION="1.6.3"
+MINOR="1.7"
+VERSION="1.7.2"
 
 function install () {
   echo "installing julia"
