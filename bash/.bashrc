@@ -91,7 +91,7 @@ fi
 
 # some more ls aliases
 alias ls='exa'
-alias find='fd'
+#alias find='fd'
 alias cat='bat'
 alias fucking='sudo'
 
@@ -121,9 +121,10 @@ fi
 
 # fnm
 PATH=$DOTFILES_PATH/bin:$ME/.local/bin:$ME/.local/kitty.app/bin/kitty:$PATH
-PATH=$ME/.poetry/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:$ME/go/bin:$PATH
-export PATH=$ME/.fnm:/opt/julia/bin:/opt/swift/usr/bin:/opt/janet/bin:/opt/python/3.10.1/bin:/opt:/opt/zig:$PATH
+PATH=$ME/.poetry/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:/usr/local/go/bin:$ME/go/bin:$PATH
+export PATH=$ME/.fnm:$ME/.rbenv/bin:/opt/julia/bin:/opt/swift/usr/bin:/opt/janet/bin:/opt/python/3.10.1/bin:/opt:/opt/zig:$PATH
 eval "`fnm env`"
+eval "$(rbenv init - bash)"
 
 export LIBGL_ALWAYS_INDIRECT=1
 
@@ -147,6 +148,4 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 eval "$(starship init bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+[[ -s "/home/reinaldy/.sdkman/bin/sdkman-init.sh" ]] && source "/home/reinaldy/.sdkman/bin/sdkman-init.sh"
