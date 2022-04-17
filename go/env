@@ -1,3 +1,2 @@
 GO111MODULE=on
-GOPRIVATE=repository.klgsys.com
-GOPROXY=https://goproxy.io,direct
+GOPROXY=https://proxy.golang.org,direct

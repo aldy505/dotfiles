@@ -131,7 +131,6 @@ export LIBGL_ALWAYS_INDIRECT=1
 # set DISPLAY variable to the IP automatically assigned to WSL2
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 sudo /etc/init.d/dbus start &> /dev/null
-. "$HOME/.cargo/env"
 
 # enable GPG signing
 export GPG_TTY=$(tty)
