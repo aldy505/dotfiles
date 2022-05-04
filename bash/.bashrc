@@ -148,3 +148,4 @@ eval "$(starship init bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/reinaldy/.sdkman/bin/sdkman-init.sh" ]] && source "/home/reinaldy/.sdkman/bin/sdkman-init.sh"
+. "$HOME/.cargo/env"
