@@ -128,9 +128,9 @@ eval "$(rbenv init - bash)"
 
 export LIBGL_ALWAYS_INDIRECT=1
 
-# set DISPLAY variable to the IP automatically assigned to WSL2
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-sudo /etc/init.d/dbus start &> /dev/null
+# # set DISPLAY variable to the IP automatically assigned to WSL2
+# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+# sudo /etc/init.d/dbus start &> /dev/null
 
 # enable GPG signing
 export GPG_TTY=$(tty)
@@ -143,7 +143,7 @@ export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
 
 export EDITOR="micro"
 export COLORTERM="truecolor"
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 eval "$(starship init bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

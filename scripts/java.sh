@@ -15,7 +15,7 @@ function install () {
 
 function install_alt () {
   cd ~
-  sudo apt-get install openjdk-17-jre openjdk-17-jdk
+  sudo apt-get install -y openjdk-17-jre openjdk-17-jdk
   printf "\n\n"
   java --version
   printf "\n"
