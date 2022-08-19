@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="3.10.2"
+VERSION="3.10.6"
 
 function install () {
   cd ~
@@ -12,8 +12,8 @@ function install () {
     --enable-shared \
     --enable-ipv6 \
     LDFLAGS=-Wl,-rpath=/opt/python/${VERSION}/lib,--disable-new-dtags
-  make
-  sudo make install
+  make -j $(nproc)
+  sudo make install -j $(nproc)
 
   cd ~
   curl -O https://bootstrap.pypa.io/get-pip.py

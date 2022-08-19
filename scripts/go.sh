@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="1.18.1"
+VERSION="1.19"
 
 function install () {
   echo "installing go"

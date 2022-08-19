@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-VERSION="2.35.2"
+VERSION="2.37.2"
 
 function install () {
   cd ~
   wget https://github.com/git/git/archive/refs/tags/v${VERSION}.zip
   sudo unzip v${VERSION}.zip
   cd git-${VERSION}
-  sudo make prefix=/usr/local all
-  sudo make prefix=/usr/local install
+  sudo make prefix=/usr/local all -j $(nproc)
+  sudo make prefix=/usr/local install -j $(nproc)
   cd ~
   sudo rm -rf git-${VERSION}
   sudo rm v${VERSION}.zip

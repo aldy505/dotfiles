@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-VERSION="5.4.3"
+VERSION="5.4.4"
 
 function install () {
   cd ~
   wget https://www.lua.org/ftp/lua-${VERSION}.tar.gz
   sudo tar zxf lua-${VERSION}.tar.gz
   cd lua-${VERSION}
-  sudo make
-  sudo make install
+  sudo make -j $(nproc)
+  sudo make install -j $(nproc)
   cd ~
   sudo rm -rf lua-${VERSION}
   sudo rm lua-${VERSION}.tar.gz

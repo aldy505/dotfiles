@@ -5,8 +5,8 @@ function install () {
   git clone https://github.com/justinmeza/lci.git
   cd lci
   cmake .
-  sudo make
-  sudo make install
+  sudo make -j $(nproc)
+  sudo make install -j $(nproc)
   cd ~
   sudo rm -rf lci
 }

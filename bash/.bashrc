@@ -122,7 +122,8 @@ fi
 # fnm
 PATH=$DOTFILES_PATH/bin:$ME/.local/bin:$ME/.local/kitty.app/bin/kitty:$PATH
 PATH=$ME/.poetry/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bin:/usr/local/go/bin:$ME/go/bin:$PATH
-export PATH=$ME/.fnm:$ME/.rbenv/bin:/opt/julia/bin:/opt/swift/usr/bin:/opt/janet/bin:/opt/python/3.10.1/bin:/opt:/opt/zig:$PATH
+PATH=$ME/.fnm:$ME/.rbenv/bin:/opt/julia/bin:/opt/swift/usr/bin:/opt/janet/bin:/opt/python/3.10.6/bin:/opt:/opt/zig:$PATH
+
 eval "`fnm env`"
 eval "$(rbenv init - bash)"
 
@@ -143,9 +144,22 @@ export GPG_AGENT_INFO=${HOME}/.gnupg/S.gpg-agent:0:1
 
 export EDITOR="micro"
 export COLORTERM="truecolor"
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 eval "$(starship init bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/reinaldy/.sdkman/bin/sdkman-init.sh" ]] && source "/home/reinaldy/.sdkman/bin/sdkman-init.sh"
 . "$HOME/.cargo/env"
+
+export DENO_INSTALL="/home/reinaldy/.deno"
+export JAVA_HOME=/opt/java
+export PATH=$PATH:$JAVA_HOME/bin:$DENO_INSTALL/bin
+
+complete -C /usr/local/bin/mc mc
+
+if ! pgrep ssh-agent > /dev/null; then
+  rm -f /tmp/ssh-auth-sock
+  eval "$(ssh-agent -s -a /tmp/ssh-auth-sock)"
+  ssh-add
+else
+  export SSH_AUTH_SOCK=/tmp/ssh-auth-sock
+fi

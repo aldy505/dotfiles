@@ -18,8 +18,8 @@
   path = ~/repository/.gitconfig
 
 [user]
-	signingkey = 748A8EC5DB8653E8
-	email = aldy505@tutanota.com
+	signingkey = EA1B2522C1693EC8
+	email = aldy505@proton.me
 	name = Reinaldy Rafli
 
 [core]
