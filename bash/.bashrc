@@ -125,6 +125,7 @@ PATH=$ME/.poetry/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/opt/bin:$ME/.fly/bi
 PATH=$ME/.fnm:$ME/.rbenv/bin:/opt/julia/bin:/opt/swift/usr/bin:/opt/janet/bin:/opt/python/3.10.6/bin:/opt:/opt/zig:$PATH
 
 eval "`fnm env`"
+eval "$(fnm env --use-on-cd)"
 eval "$(rbenv init - bash)"
 
 export LIBGL_ALWAYS_INDIRECT=1
@@ -163,3 +164,6 @@ if ! pgrep ssh-agent > /dev/null; then
 else
   export SSH_AUTH_SOCK=/tmp/ssh-auth-sock
 fi
+
+
+eval "$(zoxide init bash)"

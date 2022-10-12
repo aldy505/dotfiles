@@ -1,0 +1,13 @@
+#!/usr/bin/env julia
+
+print("Target host (or user@host) >")
+targethost = lowercase(readline())
+
+print("\nFrom host[:port] > ")
+fromhost = lowercase(readline())
+
+print("\nTo host[:port] > ")
+tohost = lowercase(readline())
+print("\n")
+
+run(`ssh -f -N $targethost -L $fromhost:$tohost`)
